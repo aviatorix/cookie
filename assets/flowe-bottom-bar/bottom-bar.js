@@ -55,6 +55,10 @@ class BottomBar extends HTMLElement {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
 
+        console.log(window.location.href)
+        console.log(window.location.href.includes('home'))
+        console.log('test')
+
     }
 
     forward() {
