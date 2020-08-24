@@ -57,6 +57,7 @@ class BottomBar extends HTMLElement {
 
         console.log(window.location.href)
         console.log(window.location.href.includes('home'))
+        console.log('test')
 
     }
 
