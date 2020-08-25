@@ -39,7 +39,6 @@ class BottomBar extends HTMLElement {
     constructor() {
         super();
     }
-
     connectedCallback() {
         this.createComponent();
         let elements = document.getElementsByClassName('container-bar')[0];
@@ -86,13 +85,10 @@ class BottomBar extends HTMLElement {
 
         let divContainer = document.createElement("div");
         divContainer.classList.add('container-bar');
-
         let divBar = document.createElement("div");
         divBar.classList.add("bar-bottom");
-
         let containerArrow = document.createElement("div");
         containerArrow.classList.add("container-arrow");
-
         let leftArrow = document.createElement("a");
         leftArrow.classList.add("arrow", "left");
 
@@ -101,17 +97,12 @@ class BottomBar extends HTMLElement {
         )
 
         containerArrow.appendChild(leftArrow);
-
         let rightArrow = document.createElement("a");
         rightArrow.classList.add("arrow", "right");
-
         rightArrow.addEventListener('click', this.forward)
-
         containerArrow.appendChild(rightArrow);
         divBar.appendChild(containerArrow);
-
         divContainer.appendChild(divBar);
-
         return divContainer;
     }
 
