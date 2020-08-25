@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   public goTo() {    
     this.router.navigate(['/detail']).then(()=> 
       document.location.reload()
-    );
+    ); 
   }
 
 }
