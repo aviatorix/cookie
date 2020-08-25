@@ -56,17 +56,17 @@ class BottomBar extends HTMLElement {
         }
 
         console.log(window.location.href)
-        console.log(window.location.href.includes('home'))
-        console.log('test')
 
     }
 
     forward() {
         window.history.pushState(null, null, `${getCookie('route')}`);
+        window.location.reload();
         window.history.go();
     }
 
     back() {
+        window.location.reload();
         window.history.back();
     }
 
