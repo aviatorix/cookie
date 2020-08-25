@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailTestComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    window.location.reload();
+  }
 
   ngOnInit() {
   }
