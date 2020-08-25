@@ -50,6 +50,11 @@ class BottomBar extends HTMLElement {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
 
+        if (window.location.href.includes('home')) {
+            setCookie('route', 'home');
+            document.getElementsByClassName('arrow left')[0].style.display = "none";
+        }
+
         if (getCookie('route') === null) {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
