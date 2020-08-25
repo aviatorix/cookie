@@ -55,14 +55,18 @@ class BottomBar extends HTMLElement {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
 
+        console.log(window.location.href)
+
     }
 
     forward() {
         window.history.pushState(null, null, `${getCookie('route')}`);
+        window.location.reload();
         window.history.go();
     }
 
     back() {
+        window.location.reload();
         window.history.back();
     }
 
