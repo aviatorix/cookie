@@ -45,7 +45,6 @@ class BottomBar extends HTMLElement {
         let elements = document.getElementsByClassName('container-bar')[0];
         elements.classList.add("sticky");
 
-
         if (window.location.href.includes('detail')) {
             setCookie('route', 'detail');
             document.getElementsByClassName('arrow right')[0].style.display = "none";
