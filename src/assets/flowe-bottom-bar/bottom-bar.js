@@ -61,12 +61,11 @@ class BottomBar extends HTMLElement {
     forward() {
         window.history.pushState(null, null, `${getCookie('route')}`);
         window.history.go();
-        window.location.reload();
     }
 
     back() {
         window.history.back();
-        window.location.reload();
+        window.location.replace("home");
     }
 
     createComponent() {
@@ -93,7 +92,9 @@ class BottomBar extends HTMLElement {
         let leftArrow = document.createElement("a");
         leftArrow.classList.add("arrow", "left");
 
-        leftArrow.addEventListener('click', this.back)
+        leftArrow.addEventListener('click',
+            this.back
+        )
 
         containerArrow.appendChild(leftArrow);
 
