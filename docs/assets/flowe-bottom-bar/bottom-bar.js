@@ -51,7 +51,6 @@ class BottomBar extends HTMLElement {
         }
 
         if (window.location.href.includes('home')) {
-            setCookie('route', 'home');
             document.getElementsByClassName('arrow left')[0].style.display = "none";
         }
 
