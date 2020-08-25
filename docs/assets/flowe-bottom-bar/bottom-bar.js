@@ -60,13 +60,13 @@ class BottomBar extends HTMLElement {
 
     forward() {
         window.history.pushState(null, null, `${getCookie('route')}`);
-        window.location.reload();
         window.history.go();
+        window.location.reload();
     }
 
     back() {
-        window.location.reload();
         window.history.back();
+        window.location.reload();
     }
 
     createComponent() {
