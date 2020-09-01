@@ -37,7 +37,6 @@ const styleRules = `
 class BottomBar extends HTMLElement {
     constructor() {
         super();
-        // deleteAllCookies();
         localStorage.clear();
     }
     connectedCallback() {
@@ -57,8 +56,6 @@ class BottomBar extends HTMLElement {
         if (getCookie('route') === null) {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
-
-        console.log(getCookie('route'))
 
     }
 
@@ -134,10 +131,4 @@ function getCookie(cname) {
 
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";" + ";path=/";
-}
-
-function deleteAllCookies() {
-    var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++)
-        document.cookie = cookies[i].split("=")[0] + "; path=/";
 }
