@@ -139,5 +139,5 @@ function setCookie(cname, cvalue) {
 function deleteAllCookies() {
     var cookies = document.cookie.split(";");
     for (var i = 0; i < cookies.length; i++)
-        document.cookie = "route = " + cookies[i].split("=")[0] + "; path=/";
+        document.cookie = cookies[i].split("=")[0] + "=" + null + ";" + "path=/";
 }
