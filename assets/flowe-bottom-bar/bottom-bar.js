@@ -38,8 +38,6 @@ class BottomBar extends HTMLElement {
 
     constructor() {
         super();
-        deleteAllCookies();
-        localStorage.clear();
     }
     connectedCallback() {
         this.createComponent();
@@ -82,7 +80,6 @@ class BottomBar extends HTMLElement {
     }
 
     createBar() {
-
         let divContainer = document.createElement("div");
         divContainer.classList.add('container-bar');
         let divBar = document.createElement("div");
@@ -103,6 +100,8 @@ class BottomBar extends HTMLElement {
         containerArrow.appendChild(rightArrow);
         divBar.appendChild(containerArrow);
         divContainer.appendChild(divBar);
+        deleteAllCookies();
+        localStorage.clear();
         return divContainer;
     }
 
