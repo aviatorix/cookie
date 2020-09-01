@@ -37,7 +37,6 @@ const styleRules = `
 class BottomBar extends HTMLElement {
     constructor() {
         super();
-        deleteAllCookies();
         localStorage.clear();
     }
     connectedCallback() {
@@ -134,10 +133,4 @@ function getCookie(cname) {
 
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";" + ";path=/";
-}
-
-function deleteAllCookies() {
-    /*var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++)*/
-    document.cookie = "route" + "=" + null + ";" + "path=/";
 }
