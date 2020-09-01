@@ -37,7 +37,7 @@ const styleRules = `
 class BottomBar extends HTMLElement {
     constructor() {
         super();
-        deleteAllCookies();
+        // deleteAllCookies();
         localStorage.clear();
     }
     connectedCallback() {
