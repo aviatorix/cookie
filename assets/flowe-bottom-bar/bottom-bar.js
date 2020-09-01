@@ -40,7 +40,7 @@ class BottomBar extends HTMLElement {
         super();
     }
     connectedCallback() {
-        this.deleteAllCookies();
+        deleteAllCookies();
         this.createComponent();
         let elements = document.getElementsByClassName('container-bar')[0];
         elements.classList.add("sticky");
