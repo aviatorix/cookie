@@ -35,9 +35,10 @@ const styleRules = `
     }
 `;
 class BottomBar extends HTMLElement {
-
     constructor() {
         super();
+        deleteAllCookies();
+        localStorage.clear();
     }
     connectedCallback() {
         this.createComponent();
@@ -66,7 +67,6 @@ class BottomBar extends HTMLElement {
 
     back() {
         window.history.back();
-        setCookie('route', 'detail');
         window.location.replace("home");
     }
 
@@ -101,8 +101,6 @@ class BottomBar extends HTMLElement {
         containerArrow.appendChild(rightArrow);
         divBar.appendChild(containerArrow);
         divContainer.appendChild(divBar);
-        deleteAllCookies();
-        localStorage.clear();
         return divContainer;
     }
 
@@ -139,5 +137,5 @@ function setCookie(cname, cvalue) {
 function deleteAllCookies() {
     var cookies = document.cookie.split(";");
     for (var i = 0; i < cookies.length; i++)
-        document.cookie = cookies[i].split("=")[0] + "=" + "" + "" + "; path=/";
+        document.cookie = cookies[i].split("=")[0] + "; path=/";
 }
