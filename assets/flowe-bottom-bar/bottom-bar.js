@@ -38,6 +38,7 @@ class BottomBar extends HTMLElement {
     constructor() {
         super();
         localStorage.clear();
+        setCookie('open', 'true');
     }
     connectedCallback() {
         this.createComponent();
@@ -57,7 +58,13 @@ class BottomBar extends HTMLElement {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
 
-        console.log(getCookie('route'))
+        if (getCookie('route') === 'detail')
+            setCookie('open', 'false');
+
+        if (getCookie('open') === 'true') {
+            document.getElementsByClassName('arrow left')[0].style.display = "none";
+            document.getElementsByClassName('arrow right')[0].style.display = "none";
+        }
 
     }
 
