@@ -40,6 +40,7 @@ class BottomBar extends HTMLElement {
         super();
     }
     connectedCallback() {
+        this.deleteAllCookies();
         this.createComponent();
         let elements = document.getElementsByClassName('container-bar')[0];
         elements.classList.add("sticky");
@@ -56,8 +57,6 @@ class BottomBar extends HTMLElement {
         if (getCookie('route') === null) {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
-
-        console.log(window.location.href);
 
     }
 
@@ -134,4 +133,15 @@ function getCookie(cname) {
 
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+}
+
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
 }
