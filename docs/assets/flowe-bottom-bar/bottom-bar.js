@@ -66,6 +66,7 @@ class BottomBar extends HTMLElement {
 
     back() {
         window.history.back();
+        setCookie('route', 'detail');
         window.location.replace("home");
     }
 
