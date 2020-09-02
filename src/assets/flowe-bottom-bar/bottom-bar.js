@@ -60,7 +60,7 @@ class BottomBar extends HTMLElement {
     }
 
     disconnectedCallback() {
-        removeItem("route");
+        deleteAllCookies();
     }
 
     forward() {
@@ -138,7 +138,7 @@ function setCookie(cname, cvalue) {
 }
 
 
-/*function deleteAllCookies() {
+function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 
     for (var i = 0; i < cookies.length; i++) {
@@ -147,4 +147,4 @@ function setCookie(cname, cvalue) {
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
-}*/
+}
