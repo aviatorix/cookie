@@ -39,6 +39,7 @@ class BottomBar extends HTMLElement {
         super();
         localStorage.clear();
         sessionStorage.clear();
+        Cache.delete();
     }
     connectedCallback() {
         this.createComponent();
