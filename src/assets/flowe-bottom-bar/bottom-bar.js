@@ -58,7 +58,6 @@ class BottomBar extends HTMLElement {
         if (getCookie('route') === null) {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
-
     }
 
     disconnectedCallback() {
