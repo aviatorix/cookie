@@ -39,10 +39,16 @@ class BottomBar extends HTMLElement {
         super();
         localStorage.clear();
         sessionStorage.clear();
+
+        console.log(caches.keys())
         caches.keys().then(function(names) {
-            for (let name of names)
+            for (let name of names) {
+                console.log(name);
                 caches.delete(name);
+            }
+
         });
+
     }
     connectedCallback() {
         this.createComponent();
