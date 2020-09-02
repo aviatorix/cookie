@@ -39,7 +39,7 @@ class BottomBar extends HTMLElement {
         super();
         localStorage.clear();
         sessionStorage.clear();
-        Cache.delete();
+        caches.delete();
     }
     connectedCallback() {
         this.createComponent();
@@ -58,7 +58,6 @@ class BottomBar extends HTMLElement {
         if (getCookie('route') === null) {
             document.getElementsByClassName('arrow right')[0].style.display = "none";
         }
-
     }
 
     disconnectedCallback() {
