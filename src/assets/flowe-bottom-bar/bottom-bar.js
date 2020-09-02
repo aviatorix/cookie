@@ -145,6 +145,7 @@ function removeItem(sKey, sPath, sDomain) {
         (sPath ? "; path=" + sPath : "");
 }
 */
+
 function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 
