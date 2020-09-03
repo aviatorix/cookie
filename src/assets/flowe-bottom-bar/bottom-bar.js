@@ -151,7 +151,11 @@ function deleteCookies(name) {
     var cookies = document.cookie.split(";");
 
     console.log(cookies);
-    //console.log(cookies.length);
+    if (cookies.length === 1) {
+        var eqPos = cookies.indexOf("=");
+        console.log(eqPos);
+    }
+
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i];
         console.log(cookie);
