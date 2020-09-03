@@ -49,7 +49,6 @@ class BottomBar extends HTMLElement {
     }
     connectedCallback() {
 
-        deleteCookies('route');
         this.createComponent();
         let elements = document.getElementsByClassName('container-bar')[0];
         elements.classList.add("sticky");
@@ -150,18 +149,9 @@ function setCookie(cname, cvalue) {
 function deleteCookies(name) {
     var cookies = document.cookie.split(";");
 
-    console.log(cookies);
-
-    var eqPos = cookies.indexOf("=");
-    var name = eqPos > -1 ? cookies.substr(0, eqPos) : cookies;
-    console.log(name);
-
-
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i];
-        console.log(cookie);
-
-        if (cookie === name) {
+        if (cookie.includes(name)) {
             var eqPos = cookie.indexOf("=");
             var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
             document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
