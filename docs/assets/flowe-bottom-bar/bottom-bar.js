@@ -48,6 +48,8 @@ class BottomBar extends HTMLElement {
 
     }
     connectedCallback() {
+
+        deleteCookies('route');
         this.createComponent();
         let elements = document.getElementsByClassName('container-bar')[0];
         elements.classList.add("sticky");
@@ -150,6 +152,8 @@ function deleteCookies(name) {
 
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i];
+        console.log(cookie);
+
         if (cookie === name) {
             var eqPos = cookie.indexOf("=");
             var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
