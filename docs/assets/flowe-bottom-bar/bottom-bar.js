@@ -152,8 +152,8 @@ function deleteCookies(name) {
 
     console.log(cookies);
 
-    var eqPos = cookie.indexOf("=");
-    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    var eqPos = cookies.indexOf("=");
+    var name = eqPos > -1 ? cookies.substr(0, eqPos) : cookies;
     console.log(name);
 
 
