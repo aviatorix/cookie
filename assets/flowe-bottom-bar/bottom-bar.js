@@ -150,6 +150,7 @@ function setCookie(cname, cvalue) {
 function deleteCookies(name) {
     var cookies = document.cookie.split(";");
 
+    console.log(cookies);
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i];
         console.log(cookie);
